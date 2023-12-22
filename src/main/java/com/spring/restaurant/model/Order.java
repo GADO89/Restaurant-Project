@@ -4,15 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "orderfood")
+@Table(name = "orders")
 public class Order extends CategoryOrder {
     @Column(name = "price")
     private int price;
@@ -22,5 +21,10 @@ public class Order extends CategoryOrder {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "id_Category")
+    private Category category;
+
 
 }
