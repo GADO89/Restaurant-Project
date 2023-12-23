@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/api")
 public class OrderController {
     private OrderService orderService;
     @Autowired
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
-    @GetMapping("/api/allOrders")
+    @GetMapping("/allOrders")
     public List<Order> allOrders(){
         return   orderService.getAllOrders();
     }
 
-    @GetMapping("/api/category")
+    @GetMapping("/category")
     public List<Order> getAllOrderByIdCategories(@RequestParam Long id){
         return orderService.getOrdersByIdCategories(id);
     }
