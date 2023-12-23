@@ -31,7 +31,7 @@ public class OrderController {
     public Order getOrderById(@RequestParam Long id){
         return orderService.getOrder(id);
     }
-    @GetMapping("/orderKey")
+    @GetMapping("/orderKey")  //// @GetMapping("/orderKey")
     public List<Order> findByNameContaining(@RequestParam String word){
         return orderService.getOrersByKey(word);
     }
