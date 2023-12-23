@@ -18,22 +18,23 @@ public class OrderController {
         this.orderService = orderService;
     }
     @GetMapping("/allOrders")
-    public List<Order> allOrders(){
-        return   orderService.getAllOrders();
+    public List<Order> allOrders(@RequestParam int page,@RequestParam int size){
+        return   orderService.getAllOrders(page,size);
     }
 
     @GetMapping("/category")
-    public List<Order> getAllOrderByIdCategories(@RequestParam Long id){
-        return orderService.getOrdersByIdCategories(id);
+    public List<Order> getAllOrderByIdCategories(@RequestParam Long id,@RequestParam int page,@RequestParam int size){
+        return orderService.getOrdersByIdCategories(id,page,size);
+    }
+    @GetMapping("/orderKey")  //// @GetMapping("/orderKey")
+    public List<Order> getOrersByKey(@RequestParam String word,@RequestParam int page,@RequestParam int size){
+        return orderService.getOrdersByKey(word,page,size);
     }
 
     @GetMapping("/order")
     public Order getOrderById(@RequestParam Long id){
         return orderService.getOrder(id);
     }
-    @GetMapping("/orderKey")  //// @GetMapping("/orderKey")
-    public List<Order> findByNameContaining(@RequestParam String word){
-        return orderService.getOrersByKey(word);
-    }
+
 
 }
