@@ -27,5 +27,13 @@ public class OrderController {
         return orderService.getOrdersByIdCategories(id);
     }
 
+    @GetMapping("/order")
+    public Order getOrderById(@RequestParam Long id){
+        return orderService.getOrder(id);
+    }
+    @GetMapping("/orderKey")
+    public List<Order> findByNameContaining(@RequestParam String word){
+        return orderService.getOrersByKey(word);
+    }
 
 }
