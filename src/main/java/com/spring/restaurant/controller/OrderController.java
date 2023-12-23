@@ -5,9 +5,7 @@ import com.spring.restaurant.model.Order;
 import com.spring.restaurant.service.CategoryService;
 import com.spring.restaurant.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,11 @@ public class OrderController {
     public List<Order> allOrders(){
         return   orderService.getAllOrders();
     }
+
+    @GetMapping("/api/category")
+    public List<Order> getAllOrderByIdCategories(@RequestParam Long id){
+        return orderService.getOrdersByIdCategories(id);
+    }
+
 
 }
