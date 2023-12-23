@@ -40,6 +40,9 @@ public class OrderService {
         return orderRepository.count();
     }
 
+    public long  getOrderLengthByCategoryId(Long id){
+        return orderRepository.getOrderLengthByCategoryId(id);
+    }
 
 
 }

@@ -39,6 +39,8 @@ public class OrderController {
     public long orderSize(){
         return orderService.getAllOrdersSize();
     }
-
-
+    @GetMapping("/categoryidsize")
+    public long  getOrderLengthByCategoryId(@RequestParam Long id){
+        return orderService.getOrderLengthByCategoryId(id);
+    }
 }
