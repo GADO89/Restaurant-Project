@@ -36,6 +36,9 @@ public class OrderService {
     }
 
 
+    public long getAllOrdersSize(){
+        return orderRepository.count();
+    }
 
 
 
