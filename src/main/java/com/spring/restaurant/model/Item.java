@@ -1,10 +1,27 @@
 package com.spring.restaurant.model;
 
-import java.util.Date;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "item")
 public class Item extends BaseEntity{
+
+    @Column(name = "image")
     private String img;
+
+    @Column(name = "quantity")
     private int quantity;
+
+    @Column(name = "price")
     private int price;
+
+    @ManyToOne
+    @JoinColumn(name = "id_requestOrder")
+    private RequestOrder requestOrder;
 
 }
