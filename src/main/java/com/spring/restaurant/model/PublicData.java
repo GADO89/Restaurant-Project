@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 @Data
 @MappedSuperclass
-public class PublicData extends BaseEntity{
+public class PublicData extends CategoryOrder{
 
 
     @Column(name = "name")

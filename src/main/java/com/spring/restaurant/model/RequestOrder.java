@@ -6,14 +6,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.Column;
 import java.util.Date;
 
-public class RequestOrder {
-    private long id;
+public class RequestOrder extends CategoryOrder{
     private String code;
     private String note;
     private int totalPrice;
     private int totalQuantity;
-    private Date dataCreated;
-    private Date dataUpdated;
 
 
 
