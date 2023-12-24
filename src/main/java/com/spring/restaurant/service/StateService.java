@@ -21,4 +21,10 @@ public class StateService {
     public List<State> getAllStates(){
         return   stateRepository.findAll();
     }
+
+    public List<State> findStatesByCountryCode(String code){
+        return stateRepository.findByCountryCode(code);
+    }
+
+
 }
