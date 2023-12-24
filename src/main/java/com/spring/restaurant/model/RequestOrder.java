@@ -1,5 +1,6 @@
 package com.spring.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,14 +28,22 @@ public class RequestOrder extends CategoryOrder{
     @Column(name = "total_quantity")
     private int totalQuantity;
 
-    @OneToMany(mappedBy = "requestOrder")
+   // @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "requestOrder")
     private Set<Item> items;
 
-
+   // @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
-    private Address address;
+    @OneToOne
+    @JoinColumn(name = "to_address_id", referencedColumnName = "id")
+    private Address toAddress;
 
+    @OneToOne
+    @JoinColumn(name = "from_address_id", referencedColumnName = "id")
+    private Address fromAddress;
 
 
 

@@ -1,5 +1,6 @@
 package com.spring.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,8 +21,9 @@ public class Item extends BaseEntity{
     @Column(name = "price")
     private int price;
 
+    //@JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "id_requestOrder")
+    @JoinColumn(name = "request_order_id")
     private RequestOrder requestOrder;
 
 }
