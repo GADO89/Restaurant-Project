@@ -1,6 +1,5 @@
 package com.spring.restaurant.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -39,11 +38,11 @@ public class RequestOrder extends CategoryOrder{
 
     @OneToOne
     @JoinColumn(name = "to_address_id", referencedColumnName = "id")
-    private Address toAddress;
+    private Address toAddress=new Address();
 
     @OneToOne
     @JoinColumn(name = "from_address_id", referencedColumnName = "id")
-    private Address fromAddress;
+    private Address fromAddress=new Address();
 
 
 
