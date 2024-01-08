@@ -1,11 +1,10 @@
 package com.spring.restaurant.model;
 
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.minidev.json.annotate.JsonIgnore;
 
-import javax.persistence.*;
 
 @Data
 @NoArgsConstructor

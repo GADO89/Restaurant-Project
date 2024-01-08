@@ -1,13 +1,13 @@
 package com.spring.restaurant.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
+import lombok.*;
 
-@Data
+
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "item")
 public class Item extends BaseEntity{
@@ -21,9 +21,7 @@ public class Item extends BaseEntity{
     @Column(name = "price")
     private int price;
 
-    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "request_order_id")
     private RequestOrder requestOrder;
-
 }

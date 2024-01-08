@@ -5,9 +5,8 @@ import com.spring.restaurant.dto.PurchaseResponse;
 import com.spring.restaurant.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-@RestController
 @CrossOrigin("http://localhost:4200")
+@RestController
 @RequestMapping("/api/buy")
 public class PurchaseController {
 

@@ -1,14 +1,14 @@
 package com.spring.restaurant.model;
 
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+
 import java.util.Date;
 
 @Data
@@ -23,7 +23,7 @@ public class CategoryOrder extends BaseEntity{
     @CreationTimestamp
     private Date dataCreate;
 
-    @Column( name = "data_update")
+   @Column( name = "data_update")
     @UpdateTimestamp
     private Date dataUpdate;
 

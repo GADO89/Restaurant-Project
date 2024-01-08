@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
 @Data
 @NoArgsConstructor
 @Entity
@@ -23,6 +24,5 @@ public class Address extends CategoryOrder{
     @OneToOne
     @PrimaryKeyJoinColumn
     private RequestOrder requestOrder;
-
 
 }

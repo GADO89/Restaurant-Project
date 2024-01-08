@@ -26,8 +26,8 @@ public class StateController {
         return   stateService.getAllStates();
     }
     @GetMapping("/statesCode")
-    public List<State> getStatesByCode(@RequestParam String code){
-        return stateService.findStatesByCountryCode(code);
+    public List<State> getStatesByCode(@RequestParam("code") String code){
+        return stateService.getStatesByCountryCode(code);
     }
 
 
