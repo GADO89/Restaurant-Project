@@ -19,8 +19,9 @@ public class Client extends PublicData{
     @Column(name = "phone_number")
     private String phoneNumber;
 
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "client")
-    private Set<RequestOrder> requestOrders=new HashSet<>();
+     private Set<RequestOrder> requestOrders=new HashSet<>();
 
     public void addRequestOrder(RequestOrder requestOrder){
         requestOrders.add(requestOrder);
