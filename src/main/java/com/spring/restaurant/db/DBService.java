@@ -29,8 +29,8 @@ public class DBService implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-       User user=new User();
-       /* user.setEmail("eslam@gmail.com");
+       /*User user=new User();
+       user.setEmail("eslam@gmail.com");
         user.setPassword(passwordEncoder.encode("6789"));
         user.setActive(1);
         List<Authorities> authorities=authoritiesRepository.findAll();

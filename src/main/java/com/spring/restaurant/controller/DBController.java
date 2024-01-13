@@ -12,7 +12,7 @@ public class DBController {
     public String getData(){
         return "My Data";
     }
-    @GetMapping("/adminuser")
+    @GetMapping("/adminUser")
     public String adminUser(){
         return "I am user || admin";
     }
